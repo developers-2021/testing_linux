@@ -1,8 +1,10 @@
-FROM debian:latest
+FROM ubuntu:14.04
 MAINTAINER Tasso Evangelista <tasso@tassoevan.me>
 
 # Install build dependencies
 ENV DEBIAN_FRONTEND noninteractive
+
+RUN add-apt-repository ppa:ondrej/php
 
 # SSH Service
 RUN apt-get update && \
