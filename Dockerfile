@@ -4,7 +4,6 @@ MAINTAINER Tasso Evangelista <tasso@tassoevan.me>
 # Install build dependencies
 ENV DEBIAN_FRONTEND noninteractive
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install software-properties-common
 RUN DEBIAN_FRONTEND=noninteractive add-apt-repository ppa:ondrej/php5-oldstable
 RUN apt-get update
 
