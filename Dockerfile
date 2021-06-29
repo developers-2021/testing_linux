@@ -4,8 +4,6 @@ MAINTAINER Tasso Evangelista <tasso@tassoevan.me>
 # Install build dependencies
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN add-apt-repository ppa:ondrej/php
-
 # SSH Service
 RUN apt-get update && \
     apt-get install -y openssh-server 
