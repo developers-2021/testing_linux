@@ -3,17 +3,17 @@ MAINTAINER Tasso Evangelista <tasso@tassoevan.me>
 
 # Install build dependencies
 ENV DEBIAN_FRONTEND noninteractive
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install python-software-properties
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install software-properties-common
+RUN DEBIAN_FRONTEND=noninteractive add-apt-repository ppa:ondrej/php5-oldstable
+RUN apt-get update
 
 # SSH Service
 RUN apt-get update && \
     apt-get install -y openssh-server 
 EXPOSE 22
-
-RUN apt-get install python-software-properties
-
-RUN add-apt-repository ppa:ondrej/php5-oldstable && \
-    apt-get update
-    
+ 
 RUN apt-get update && \
     apt-get install -y memcached unzip php5 php5-cli php5-dev php5-curl php5-xdebug php-db php-pear php5-sqlite php5-memcache build-essential libaio1 re2c sqlite curl sqlite3 php5-ldap && \
     ln -s /usr/include/php5 /usr/include/php
