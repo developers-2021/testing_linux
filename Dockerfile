@@ -9,7 +9,6 @@ RUN apt-get update && \
     apt-get install -y openssh-server 
 EXPOSE 22
 
-RUN sudo apt-get install python-software-properties
 RUN sudo add-apt-repository ppa:ondrej/php5-oldstable
 RUN sudo apt-get update
 
