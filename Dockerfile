@@ -33,7 +33,7 @@ RUN mkdir -p /opt/oracle/instantclient && \
 RUN echo 'instantclient,/opt/oracle/instantclient/lib' | pecl install oci8-2.0.12
 ADD oci8.ini /etc/php5/conf.d/oci8.ini
 ADD oci8-test.php /tmp/oci8-test.php
-RUN php5 /tmp/oci8-test.php
+#RUN php5 /tmp/oci8-test.php
 
 # Build PHP PDO-OCI extension
 RUN pecl channel-update pear.php.net && \
@@ -48,7 +48,7 @@ RUN pecl channel-update pear.php.net && \
     make install
 ADD pdo_oci.ini /etc/php5/conf.d/pdo_oci.ini
 ADD pdo_oci-test.php /tmp/pdo_oci-test.php
-RUN php5 /tmp/pdo_oci-test.php
+#RUN php5 /tmp/pdo_oci-test.php
 
 
 WORKDIR /tmp
